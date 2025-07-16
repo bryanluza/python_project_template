@@ -26,7 +26,6 @@ repos:
     rev: v1.17.0
     hooks:
       - id: mypy # Reads arguments from pyproject.toml
-        # language: python
         additional_dependencies:
           - pydantic
           - pydantic-settings
