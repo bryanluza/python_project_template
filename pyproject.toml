@@ -1,0 +1,118 @@
+[project]
+name = "PROJECT_NAME"
+version = "0.1.0"
+description = "PROJECT_DESCRIPTION"
+readme = "README.md"
+authors = [
+    { name = "{{ AUTHOR }}", email = "{{ EMAIL }}" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "pydantic>=2.11.7",
+    "pydantic-settings>=2.10.1",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.16.1",
+    "pre-commit>=4.2.0",
+    "pytest>=8.4.1",
+    "ruff>=0.12.3",
+    "sphinx>=8.2.3",
+    "sphinx-autodoc-typehints>=3.2.0",
+    "sphinx-rtd-theme>=3.0.2",
+]
+
+# Tool configurations
+## Ruff
+[tool.ruff]
+line-length = 88
+indent-width = 4
+# The minimum Python version to target.
+target-version = "py313"
+
+[tool.ruff.lint]
+# Rule codes
+select = ["E", "W", "F", "I", "C90", "N"]
+extend-select = ["B"]
+ignore = [ "E501" ] # E501 Already handled by line-length and formatter, sometimes conflicts
+# Paths to exclude from linting.
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "venv",
+]
+
+# Configuration for the import sorting (I) rules.
+[tool.ruff.lint.isort]
+force-wrap-aliases = true
+known-first-party = ["app"]
+
+# Configuration for the naming (N) rules.
+[tool.ruff.lint.pep8-naming]
+# Ignore specific arguments for naming conventions.
+ignore-names = ["cls", "self"]
+
+## Mypy
+[tool.mypy]
+python_version = "3.13"
+# Paths to check
+files = ["app/", "tests/"]
+
+# Strictness settings:
+# Disallow functions without type annotations.
+disallow_untyped_defs = true
+# Warn about unused # type: ignore comments. Helps keep ignores clean.
+warn_unused_ignores = true
+# Warn about potentially redundant type checks.
+warn_redundant_casts = true
+# Disallow dynamic typing where possible.
+disallow_any_unimported = true
+disallow_any_decorated = true
+disallow_any_explicit = true
+disallow_any_expr = true
+disallow_any_generics = true
+# Require all function return types to be annotated.
+disallow_untyped_calls = true
+# Disallow return statements in functions that don't always return a value.
+warn_no_return = true
+# Disallow returning a value with type Any from a function declared with a non- Any
+warn_return_any = true
+# Show error codes
+show_error_codes = true
+
+# Exclude specific paths from type checking
+exclude = [
+    ".git",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "venv",
+]
+plugins = ["pydantic.mypy"]
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
+init_typed = true
+
+## Pytest
+[tool.pytest.ini_options]
+# Directories or files where pytest should look for tests.
+pythonpath = ["."]
+testpaths = [ "tests" ]
+# Add options that are always passed to pytest when run.
+addopts = [
+    "--maxfail=1",  # Stop after the first failure.
+    "--strict-markers", # Warns about unknown test markers.
+    "--strict-config",  # Warns about unknown config options.
+]

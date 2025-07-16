@@ -1,0 +1,33 @@
+# This file defines pre-commit hooks that run automatically before each commit.
+# For more info: https://pre-commit.com
+
+repos:
+  # Standard hooks for common issues
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-added-large-files
+        args: ['--maxkb=500'] # Warn for files larger than 500KB
+
+  # Ruff (linter and formatter)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.3
+    hooks:
+      - id: ruff-format # Reads arguments from pyproject.toml
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix] # Auto-fix what Ruff can, and fail if fixes were applied
+
+  # Mypy (static type checker)
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.17.0
+    hooks:
+      - id: mypy # Reads arguments from pyproject.toml
+        # language: python
+        additional_dependencies:
+          - pydantic
+          - pydantic-settings
+          - pytest
