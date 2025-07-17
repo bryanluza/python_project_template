@@ -1,6 +1,7 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
+# TODO: Make a better example that showcases the project structure and functionality.
 def main() -> None:
     """Main function of the project."""
     print("Hello from your new project: { PROJECT_NAME}!")

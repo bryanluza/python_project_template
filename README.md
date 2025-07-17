@@ -1,6 +1,6 @@
-# {{project_template}}
+# {{ PROJECT_NAME }}
 
-## Description (TODO: update and remove the prompt focused parts)
+## Description (# TODO: remove purpose and context and expand description)
 A new Python project template for quick starts.
 
 ### Context
@@ -9,7 +9,7 @@ I'm learning how to code in Python and I'm aiming to incorporate best practices 
 ### Purpose
 I'm creating this file to document the project structure and the tools I'll be using to manage it and develop. I will also be using this document as a contextual foundation for AI chat prompts, to ensure consistent and informed discussions related to this project. For the most part I'm pretty new to most of the tools and standarts I'm planning to use here. I'm pretty open to suggestions and ideas for any improvement I could make to my project.
 
-#### Best practices to focus on
+#### Best practices to focus on (# TODO: May remove this later, kept it as a reminder but can move it elsewhere)
 - Naming Conventions (PEP 8)
 - Docstrings (PEP 257)
 - Type Hinting (PEP 484)
@@ -18,7 +18,7 @@ I'm creating this file to document the project structure and the tools I'll be u
 
 ## Key Technologies & Tools:
 
-### Development Dependencies (TODO: Is uv a dev dependency? should I mention git and GH?)
+### Development Dependencies (# TODO: Is uv a dev dependency (want to mention it but it's not part of the project's dev dependencies)? Same for git and GitHub?)
 - uv: project/package management, using pyproject.toml and uv.lock
 - ruff: code formatting and linting
 - pre-commit: git hooks manager using pre-commit-config.yaml
@@ -26,7 +26,7 @@ I'm creating this file to document the project structure and the tools I'll be u
 - mypy: static type checker
 - sphinx: documentation generation
 
-### Project Dependencies
+### Project Dependencies (# TODO: re-write)
 - pydantic: Type hinting
 - pydantic-settings for reading .env file
 
@@ -51,7 +51,7 @@ my_project/
 
 ## Features
 
-## Setup (TODO: Test, and expand, maybe include Makfile commands instead or also)
+## Setup (# TODO: Test, and expand, maybe include Makfile commands instead or also)
 1. Clone the Template: Use `git clone --depth 1 <template_repo_url> <new_project_name>`. The `--depth 1` option creates a shallow clone, only getting the latest commit, which is faster and smaller as you don't need the template's history in the new project.
 2. Rename and change directory.
 3. Remove .git folder: `rm -rf .git` The cloned repository contains the template's .git history, which you don't want. You want a fresh history for the new project.
@@ -93,5 +93,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 | git pull | Fetch and merge changes from the remote repository. |
 
 ## Other useful commands
+
+| **Command** | **Description** |
 | --- | --- |
 | git ls-tree -r HEAD --name-only | To see all the files and directories tracked in the current branch |

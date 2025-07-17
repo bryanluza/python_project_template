@@ -32,10 +32,9 @@ indent-width = 4
 target-version = "py313"
 
 [tool.ruff.lint]
-# Rule codes
-select = ["E", "W", "F", "I", "C90", "N"]
-extend-select = ["B"]
-ignore = [ "E501" ] # E501 Already handled by line-length and formatter, sometimes conflicts
+# Rule codes https://docs.astral.sh/ruff/rules/
+select = ["E", "W", "F", "I", "C90", "N", "B","TD"]
+ignore = [ "E501", "TD002", "TD003" ] # E501 Already handled by line-length and formatter, sometimes conflicts
 # Paths to exclude from linting.
 exclude = [
     ".git",
