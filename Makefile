@@ -1,4 +1,4 @@
-.PHONY: install setup run lint format test clean docs docs-clean
+.PHONY: install setup run lint format test clean docs docs-clean docs-apidoc
 
 install:
 	uv sync
@@ -25,7 +25,10 @@ clean:
 	find . -name "*.bak" -exec rm {} +
 
 docs-clean:
-	$(MAKE) -C docs clean
+	uv run sphinx-build -M clean docs docs/_build
 
 docs: docs-clean
-	$(MAKE) -C docs html
+	uv run sphinx-build -M html docs docs/_build
+
+docs-apidoc:
+	uv run sphinx-apidoc -o docs app

@@ -1,8 +1,7 @@
-project_template
-================
+app
+===
 
 .. toctree::
    :maxdepth: 4
 
    app
-   tests

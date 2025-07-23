@@ -22,7 +22,6 @@ release = "{{ VERSION }}"
 extensions = [
     "sphinx.ext.autodoc",  # To automatically generate docs from docstrings
     "sphinx.ext.napoleon",  # If you use Google or NumPy style docstrings
-    "sphinx.ext.todo",  # For todo notes in docs
     "sphinx.ext.viewcode",  # To link to source code
     "sphinx_rtd_theme",  # The Read the Docs theme
     "sphinx_autodoc_typehints",  # Better display of type hints
@@ -36,7 +35,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "sphinx_rtd_theme"
-html_static_path = ["_static"]
+# html_static_path = ["_static"] # Uncomment if you have static files like CSS or images
 
 # Napoleon settings (for Google or NumPy style docstrings)
 napoleon_google_docstring = True
@@ -57,5 +56,3 @@ napoleon_attr_annotations = True
 # sphinx_autodoc_typehints settings
 typehints_document_rtype = True
 typehints_fully_qualified = False  # Use simpler names for types
-
-todo_include_todos = True  # Set to False for production builds
