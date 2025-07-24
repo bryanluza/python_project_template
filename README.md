@@ -50,6 +50,7 @@ You’ll be prompted for project name, author, etc. All placeholders will be aut
 - LICENSE
 - app/main.py
 - tests/test_main.py
+- docs/config.py
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
