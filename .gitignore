@@ -5,8 +5,3 @@ build/
 dist/
 wheels/
 *.egg-info
-
-# Enviroment variables file
-.env
-# Sphinx documentation build directory
-docs/_build/

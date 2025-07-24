@@ -1,6 +1,6 @@
-# {{ PROJECT_NAME }}
+# Cookiecutter Python
 
-## Description (# TODO: remove purpose and context and expand description)
+## Description (# TODO: Merge whatever is relevant from purpose and context into a project description, don't want to include personal stuff.)
 A new Python project template for quick starts.
 
 ### Context
@@ -9,10 +9,11 @@ I'm learning how to code in Python and I'm aiming to incorporate best practices 
 ### Purpose
 I'm creating this file to document the project structure and the tools I'll be using to manage it and develop. I will also be using this document as a contextual foundation for AI chat prompts, to ensure consistent and informed discussions related to this project. For the most part I'm pretty new to most of the tools and standarts I'm planning to use here. I'm pretty open to suggestions and ideas for any improvement I could make to my project.
 
+## Features (# TODO: Add content to this section or remove it. Would Key Technologies & Tools be a subsection of Features?)
 
 ## Key Technologies & Tools:
 
-### Development Dependencies (# TODO: Is uv a dev dependency (want to mention it but it's not part of the project's dev dependencies)? Same for git and GitHub?)
+### Development Dependencies (# TODO: Is uv a dev dependency to mention here? I want to mention it but it's not part of the actual project's dev dependencies. Same for git and GitHub?)
 - uv: project/package management, using pyproject.toml and uv.lock
 - ruff: code formatting and linting
 - pre-commit: git hooks manager using pre-commit-config.yaml
@@ -20,8 +21,8 @@ I'm creating this file to document the project structure and the tools I'll be u
 - mypy: static type checker
 - sphinx: documentation generation
 
-### Project Dependencies (# TODO: expand a little more)
-- pydantic: Type hinting and documentation  
+### Project Dependencies (# TODO: expand a little more on the descriptions.)
+- pydantic: Type hinting and documentation
 - pydantic-settings for reading .env file
 
 ## Project structure and files
@@ -43,30 +44,35 @@ my_project/
 └── uv.lock                 # Managed by uv
 ```
 
-## Features (# TODO: Add something or remove section)
+## Setup (# TODO: Create detailed instructions on how to get the project setup from using the GitHub template to the uv setup)
+1. Install uv on development PC. uv will manage the rest of the projects and dev requirements.
+2. Use template to start repository.
+3. Update template's placeholders.
+4. Set up the virtual environment, install all the pre-defined dependencies and Pre-Commit Hooks: `make install`
 
-## Setup (# TODO: Test, and expand, maybe include uv commands instead or toguether)
-1. Clone the Template: Use `git clone --depth 1 <template_repo_url> <new_project_name>`. The `--depth 1` option creates a shallow clone, only getting the latest commit, which is faster and smaller as you don't need the template's history in the new project.
-2. Rename and change directory.
-3. Remove .git folder: `rm -rf .git` The cloned repository contains the template's .git history, which you don't want. You want a fresh history for the new project.
-4. Initialize New Git Repository: `git init`
-5. Update placeholder names
+## Using This Template
 
-6. Set up the virtual environment, install all the pre-defined dependencies and Pre-Commit Hooks: `make install`
-7. Initial Commit: Make the first commit for the new project. `git add .` `git commit -m "Initial commit"`
+To start a new project using this template:
 
-## Usage
-### Makefile
-- install 
-- setup 
-- run 
-- lint 
-- format 
-- test 
+```bash
+pipx install cookiecutter
+cookiecutter gh:bryanluza/python_project_template
+```
+
+You’ll be prompted for project name, author, etc. All placeholders will be automatically replaced.
+
+### Makefile (# TODO: Add details to this section. Maybe just a short explanation to each command.)
+Included Makefile is very simple but a great place to group commonly used commands (and not having to remember them) and probably helpful as projects grow. These are the commands currently included:
+- install
+- setup
+- run
+- lint
+- format
+- test
 - clean
 
-### Documentation
-**Note:** Initial setup already done using `sphinx-quickstart` and `sphinx-apidoc`. 
+### Documentation (# TODO: Review if more details are needed.)
+**Note:** Initial setup already done using `sphinx-quickstart` and `sphinx-apidoc`.
 - Automatically generate the .rst structure: `make docs-apidoc`
 - Generate docs in html: `make docs`
 - Clean generated documentation: `make docs-clean`
