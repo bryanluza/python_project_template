@@ -6,7 +6,7 @@ This template is designed to help start Python projects efficiently, using curre
 
 ## Features
 
-- Cookiecutter-powered scaffolding (customize project name, author, etc.) [Cookiecutter](https://github.com/cookiecutter/cookiecutter)
+- Cookiecutter-powered scaffolding (customize project name, author, etc.) [`cookiecutter`](https://github.com/cookiecutter/cookiecutter)
 - Project and dependencies managment with isolated Python environment via [`uv`](https://github.com/astral-sh/uv)
 - Testing with [`pytest`](https://pytest.org/)
 - Pre-configured linting and formatting with [`ruff`](https://github.com/astral-sh/ruff)
@@ -48,7 +48,11 @@ cookiecutter gh:bryanluza/python_project_template
 
 You’ll be prompted to enter project-specific values (name, author, etc.). All placeholders are automatically replaced throughout the generated files.
 
-**Placeholder locations:**
+Note:
+- Cookiecutter will create a new folder for your project, named according to the project name you specify.
+- The template does not initialize a Git repository automatically. If you want to use Git for version control, you should run `git init` inside your new project folder after generation.
+
+Placeholder locations:
 - pyproject.toml
 - LICENSE
 - app/main.py
@@ -64,7 +68,7 @@ You’ll be prompted to enter project-specific values (name, author, etc.). All 
 - **mypy**: Static type checking for Python.
 - **sphinx**: Documentation generation.
 
-*Note: Tools like `uv`, `cookiecutter`, and `git` are required for development workflow but are not installed as runtime dependencies of your project.*
+Note: Tools like `uv`, `cookiecutter`, and `git` are required for development workflow but are not installed as runtime dependencies of your project.
 
 ## Project Dependencies
 
