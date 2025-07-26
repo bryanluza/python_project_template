@@ -43,7 +43,7 @@ To bootstrap a new project:
 
 ```bash
 pipx install cookiecutter
-cookiecutter gh:bryanluza/python_project_template
+cookiecutter gh:bryanluza/python-project-template
 ```
 
 You’ll be prompted to enter project-specific values (name, author, etc.). All placeholders are automatically replaced throughout the generated files.
